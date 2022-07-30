@@ -61,10 +61,6 @@ app.get('/', async (req, res) => {
     const cryptoFunc = getCryptoFunc(type);
     await cryptoFunc(Number(size));
 
-    req.on('close', () => {
-        console.log('request dropped!\n')
-    })
-
     res.status(200);
     res.end('Hello World');
 });
